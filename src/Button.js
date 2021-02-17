@@ -1,8 +1,8 @@
 import React from 'react';
 
-function Button({ text, onClick }) {
-  if (text) {
-    return <button className='numberButton' onClick={onClick}>{text}</button>;
+function Button({ onClick, children }) {
+  if (children) {
+    return <button className='numberButton' onClick={onClick}>{children}</button>;
   } else {
     return '';
   }
