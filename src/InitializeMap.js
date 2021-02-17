@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const field = [['', '', ''], ['', '', ''], ['', '', '']];
+const map = [['', '', ''], ['', '', ''], ['', '', '']];
 const numberList = ['1', '2', '3', '4', '5', '6', '7', '8', ''];
 const objects = [
   { x: 0, y: 0, text: numberList[0] },
@@ -14,16 +14,16 @@ const objects = [
   { x: 2, y: 2, text: numberList[8] }
 ];
 
-function InitializeField() {
+function InitializeMap() {
   const [objectList, setObjectList] = useState(objects);
 
   for (let i = 0; i < objectList.length; i++) {
     const x = objectList[i].x;
     const y = objectList[i].y;
-    field[x][y] = objectList[i];
+    map[x][y] = objectList[i];
   }
 
-  return field;
+  return map;
 }
 
-export default InitializeField;
+export default InitializeMap;

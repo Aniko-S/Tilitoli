@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Button from './Button';
-import InitializeField from './InitializeField';
+import InitializeMap from './InitializeMap';
 
 const searchEmptyField = (field) => {
   for (let i = 0; i < field.length; i++) {
@@ -9,30 +9,36 @@ const searchEmptyField = (field) => {
         console.log(i, ', ', j);
         return { i, j };
       }
+const searchEmptyField = (map) => {
+  for (let i = 0; i < map.length; i++) {
+    for (let j = 0; j < map.length; j++) {
+      if (map[i][j].text === '') {
+        return map[i][j];
+      }
     }
   }
 }
 
 function Table() {
-  const field = InitializeField();
+  const map = InitializeMap();
   
   return (
     <div className='container'>
       <table>
         <tr>
-          <td><Button onClick={() => searchEmptyField(field)}>{field[0][0].text}</Button></td>
-          <td><Button onClick={() => searchEmptyField(field)}>{field[0][1].text}</Button></td>
-          <td><Button onClick={() => searchEmptyField(field)}>{field[0][2].text}</Button></td>
+          <td><Button onClick={() => searchEmptyField(map)}>{map[0][0].text}</Button></td>
+          <td><Button onClick={() => searchEmptyField(map)}>{map[0][1].text}</Button></td>
+          <td><Button onClick={() => searchEmptyField(map)}>{map[0][2].text}</Button></td>
         </tr>
         <tr>
-          <td><Button onClick={() => searchEmptyField(field)}>{field[1][0].text}</Button></td>
-          <td><Button onClick={() => searchEmptyField(field)}>{field[1][1].text}</Button></td>
-          <td><Button onClick={() => searchEmptyField(field)}>{field[1][2].text}</Button></td>
+          <td><Button onClick={() => searchEmptyField(map)}>{map[1][0].text}</Button></td>
+          <td><Button onClick={() => searchEmptyField(map)}>{map[1][1].text}</Button></td>
+          <td><Button onClick={() => searchEmptyField(map)}>{map[1][2].text}</Button></td>
         </tr>
         <tr>
-          <td><Button onClick={() => searchEmptyField(field)}>{field[2][0].text}</Button></td>
-          <td><Button onClick={() => searchEmptyField(field)}>{field[2][1].text}</Button></td>
-          <td><Button onClick={() => searchEmptyField(field)}>{field[2][2].text}</Button></td>
+          <td><Button onClick={() => searchEmptyField(map)}>{map[2][0].text}</Button></td>
+          <td><Button onClick={() => searchEmptyField(map)}>{map[2][1].text}</Button></td>
+          <td><Button onClick={() => searchEmptyField(map)}>{map[2][2].text}</Button></td>
         </tr>
       </table>
     </div>
