@@ -3,17 +3,6 @@ import Button from './Button';
 
 
 const field = [['', '', ''], ['', '', ''], ['', '', '']];
-
-const searchEmptyField = () => {
-  for (let i = 0; i < field.length; i++) {
-    for (let j = 0; j < field.length; j++) {
-      if (field[i][j].text === '') {
-        return {i, j};
-      }
-    }
-  }
-}
-
 const numberList = ['1', '2', '3', '4', '5', '6', '7', '8', ''];
 const objects = [
   { x: 0, y: 0, text: numberList[0] },
@@ -27,16 +16,28 @@ const objects = [
   { x: 2, y: 2, text: numberList[8] }
 ];
 
-
-function Table() {
-  const [objectList, setObjectList] = useState(objects);
-
-
+const fillField = (objectList) => {
   for (let i = 0; i < objectList.length; i++) {
     const x = objectList[i].x;
     const y = objectList[i].y;
     field[x][y] = objectList[i];
   }
+}
+
+const searchEmptyField = () => {
+  for (let i = 0; i < field.length; i++) {
+    for (let j = 0; j < field.length; j++) {
+      if (field[i][j].text === '') {
+        console.log(i, ', ', j);
+        return {i, j};
+      }
+    }
+  }
+}
+
+function Table() {
+  const [objectList, setObjectList] = useState(objects);
+  fillField(objectList);  
 
   return (
     <div className='container'>
