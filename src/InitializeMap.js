@@ -1,8 +1,6 @@
-import { useState } from 'react';
-
-const map = [['', '', ''], ['', '', ''], ['', '', '']];
+const baseMap = [['', '', ''], ['', '', ''], ['', '', '']];
 const numberList = ['1', '2', '3', '4', '5', '6', '7', '8', ''];
-const objects = [
+const objectList = [
   { x: 0, y: 0, text: numberList[0] },
   { x: 0, y: 1, text: numberList[1] },
   { x: 0, y: 2, text: numberList[2] },
@@ -15,15 +13,12 @@ const objects = [
 ];
 
 function InitializeMap() {
-  const [objectList, setObjectList] = useState(objects);
-
   for (let i = 0; i < objectList.length; i++) {
     const x = objectList[i].x;
     const y = objectList[i].y;
-    map[x][y] = objectList[i];
+    baseMap[x][y] = objectList[i];
   }
-
-  return map;
+  return baseMap;
 }
 
 export default InitializeMap;
