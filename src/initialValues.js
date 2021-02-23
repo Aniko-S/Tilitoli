@@ -1,6 +1,6 @@
-const numbers = ["1", "2", "3", "4", "5", "6", "7", "8", ""];
+const baseValues = ["1", "2", "3", "4", "5", "6", "7", "8", ""];
 
-const numberList = [...numbers];
+const numberList = [...baseValues];
 
 const shuffleNumberList = () => {
   for (let i = numberList.length - 2; i > 0; i--) {
@@ -35,7 +35,7 @@ const changeNotEmptyLastTwo = () => {
 
 function initialValues() {
   shuffleNumberList();
-  return numberList;
+  return { numberList, baseValues };
 }
 
 export default initialValues;
