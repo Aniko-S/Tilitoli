@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Button from "./Button";
 import baseMap from "./InitializeMap";
 import targetMap from "./targetMap";
+import PopUp from "./PopUp";
 
 function Table() {
   const [map, setMap] = useState(baseMap);
@@ -60,43 +61,46 @@ function Table() {
   };
 
   return (
-    <div className="container">
-      <table>
-        <tr>
-          <td>
-            <Button onClick={() => step(map[0][0])}>{map[0][0].text}</Button>
-          </td>
-          <td>
-            <Button onClick={() => step(map[0][1])}>{map[0][1].text}</Button>
-          </td>
-          <td>
-            <Button onClick={() => step(map[0][2])}>{map[0][2].text}</Button>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <Button onClick={() => step(map[1][0])}>{map[1][0].text}</Button>
-          </td>
-          <td>
-            <Button onClick={() => step(map[1][1])}>{map[1][1].text}</Button>
-          </td>
-          <td>
-            <Button onClick={() => step(map[1][2])}>{map[1][2].text}</Button>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <Button onClick={() => step(map[2][0])}>{map[2][0].text}</Button>
-          </td>
-          <td>
-            <Button onClick={() => step(map[2][1])}>{map[2][1].text}</Button>
-          </td>
-          <td>
-            <Button onClick={() => step(map[2][2])}>{map[2][2].text}</Button>
-          </td>
-        </tr>
-      </table>
-    </div>
+    <>
+      <div className="container">
+        {isSolved() && <PopUp />}
+        <table>
+          <tr>
+            <td>
+              <Button onClick={() => step(map[0][0])}>{map[0][0].text}</Button>
+            </td>
+            <td>
+              <Button onClick={() => step(map[0][1])}>{map[0][1].text}</Button>
+            </td>
+            <td>
+              <Button onClick={() => step(map[0][2])}>{map[0][2].text}</Button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <Button onClick={() => step(map[1][0])}>{map[1][0].text}</Button>
+            </td>
+            <td>
+              <Button onClick={() => step(map[1][1])}>{map[1][1].text}</Button>
+            </td>
+            <td>
+              <Button onClick={() => step(map[1][2])}>{map[1][2].text}</Button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <Button onClick={() => step(map[2][0])}>{map[2][0].text}</Button>
+            </td>
+            <td>
+              <Button onClick={() => step(map[2][1])}>{map[2][1].text}</Button>
+            </td>
+            <td>
+              <Button onClick={() => step(map[2][2])}>{map[2][2].text}</Button>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </>
   );
 }
 
