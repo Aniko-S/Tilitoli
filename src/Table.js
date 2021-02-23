@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Button from "./Button";
 import baseMap from "./InitializeMap";
+import targetMap from "./targetMap";
 
 function Table() {
   const [map, setMap] = useState(baseMap);
@@ -10,6 +11,7 @@ function Table() {
     if (canStep(clickedField, emptyField)) {
       changeFields(clickedField, emptyField);
     }
+    console.log(isSolved());
   };
 
   const searchEmptyField = () => {
@@ -44,6 +46,17 @@ function Table() {
     tempMap[fieldA.x][fieldA.y].text = fieldB.text;
     tempMap[fieldB.x][fieldB.y].text = tempText;
     setMap(() => tempMap);
+  };
+
+  const isSolved = () => {
+    for (let i = 0; i < map.length; i++) {
+      for (let j = 0; j < map[i].length; j++) {
+        if (map[i][j].text !== targetMap[i][j]) {
+          return false;
+        }
+      }
+    }
+    return true;
   };
 
   return (
