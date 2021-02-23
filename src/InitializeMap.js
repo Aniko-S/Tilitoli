@@ -6,7 +6,7 @@ const baseMap = [
   ["", "", ""],
 ];
 
-const numberList = initialValues();
+const { numberList } = initialValues();
 
 const objectList = [
   { x: 0, y: 0, text: numberList[0] },
