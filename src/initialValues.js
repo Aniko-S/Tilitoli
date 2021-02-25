@@ -8,7 +8,6 @@ const shuffleNumberList = () => {
     [numberList[i], numberList[j]] = [numberList[j], numberList[i]];
   }
   if (!isValid()) {
-    console.log("change");
     changeNotEmptyLastTwo();
   }
 };
@@ -22,7 +21,6 @@ const isValid = () => {
       }
     }
   }
-  console.log(count);
   return count % 2 === 0;
 };
 
