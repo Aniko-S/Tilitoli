@@ -64,7 +64,14 @@ function Table() {
   return (
     <>
       <div className="container">
-        {solved && <PopUp onClick={() => setSolved(false)} />}
+        {solved && (
+          <PopUp
+            onClick={() => {
+              setSolved(false);
+              setMap(() => initializeMap());
+            }}
+          />
+        )}
         <table>
           <tr>
             <td>
