@@ -6,6 +6,7 @@ import PopUp from "./PopUp";
 
 function Table() {
   const [map, setMap] = useState(baseMap);
+  const [solved, setSolved] = useState(false);
 
   const step = (clickedField) => {
     const emptyField = searchEmptyField(map);
@@ -53,17 +54,17 @@ function Table() {
     for (let i = 0; i < map.length; i++) {
       for (let j = 0; j < map[i].length; j++) {
         if (map[i][j].text !== targetMap[i][j]) {
-          return false;
+          return;
         }
       }
     }
-    return true;
+    setSolved(true);
   };
 
   return (
     <>
       <div className="container">
-        {isSolved() && <PopUp />}
+        {solved && <PopUp onClick={() => setSolved(false)} />}
         <table>
           <tr>
             <td>
