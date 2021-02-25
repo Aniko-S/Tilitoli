@@ -13,6 +13,7 @@ function Table() {
     if (canStep(clickedField, emptyField)) {
       changeFields(clickedField, emptyField);
     }
+    isSolved();
   };
 
   const searchEmptyField = () => {
