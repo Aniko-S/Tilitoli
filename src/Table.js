@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import Button from "./Button";
-import baseMap from "./InitializeMap";
+import initializeMap from "./InitializeMap";
 import targetMap from "./targetMap";
 import PopUp from "./PopUp";
 
 function Table() {
-  const [map, setMap] = useState(baseMap);
+  const [map, setMap] = useState(() => initializeMap());
   const [solved, setSolved] = useState(false);
 
   const step = (clickedField) => {
