@@ -4,7 +4,7 @@ import initializeMap from "./InitializeMap";
 import targetMap from "./targetMap";
 import PopUp from "./PopUp";
 
-function Table() {
+function Table({ setRun, setNumber }) {
   const [map, setMap] = useState(() => initializeMap());
   const [solved, setSolved] = useState(false);
 
@@ -59,6 +59,7 @@ function Table() {
       }
     }
     setSolved(true);
+    setRun(false);
   };
 
   return (
@@ -69,6 +70,8 @@ function Table() {
             onClick={() => {
               setSolved(false);
               setMap(() => initializeMap());
+              setNumber(0);
+              setRun(true);
             }}
           />
         )}
