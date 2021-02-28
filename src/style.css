@@ -1,6 +1,6 @@
 .numberButton {
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  height: 100%;
   font-size: 70px;
   background-color: lightcoral;
   color: white;
@@ -9,6 +9,10 @@
 
 table {
   border: 5px solid lightcoral;
+  width: 90vw;
+  max-width: 400px;
+  height: 90vw;
+  max-height: 400px;
 }
 
 .container {

@@ -77,7 +77,7 @@ function Table({ setRun, setNumber, number }) {
           />
         )}
         <table>
-          <tr>
+          <tr className="col">
             <td>
               <Button onClick={() => step(map[0][0])}>{map[0][0].text}</Button>
             </td>
@@ -88,7 +88,7 @@ function Table({ setRun, setNumber, number }) {
               <Button onClick={() => step(map[0][2])}>{map[0][2].text}</Button>
             </td>
           </tr>
-          <tr>
+          <tr className="col">
             <td>
               <Button onClick={() => step(map[1][0])}>{map[1][0].text}</Button>
             </td>
@@ -99,7 +99,7 @@ function Table({ setRun, setNumber, number }) {
               <Button onClick={() => step(map[1][2])}>{map[1][2].text}</Button>
             </td>
           </tr>
-          <tr>
+          <tr className="col">
             <td>
               <Button onClick={() => step(map[2][0])}>{map[2][0].text}</Button>
             </td>
