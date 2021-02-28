@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <Time run={run} number={number} setNumber={setNumber} />
-      <Table setRun={setRun} setNumber={setNumber} />
+      <Table setRun={setRun} setNumber={setNumber} number={number} />
     </>
   );
 }
