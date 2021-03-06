@@ -12,12 +12,12 @@ function Time({ run, number, setNumber }) {
   }, [run]);
 
   return (
-    <h2>
+    <h1>
       {prettyMs(number, {
         colonNotation: true,
         keepDecimalsOnWholeSeconds: true,
       })}
-    </h2>
+    </h1>
   );
 }
 
