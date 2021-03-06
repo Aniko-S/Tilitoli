@@ -8,10 +8,10 @@ function App() {
   const [number, setNumber] = useState(0);
 
   return (
-    <>
+    <div className="container">
       <Time run={run} number={number} setNumber={setNumber} />
       <Table setRun={setRun} setNumber={setNumber} number={number} />
-    </>
+    </div>
   );
 }
 

@@ -12,12 +12,14 @@ function Time({ run, number, setNumber }) {
   }, [run]);
 
   return (
-    <h1>
-      {prettyMs(number, {
-        colonNotation: true,
-        keepDecimalsOnWholeSeconds: true,
-      })}
-    </h1>
+    <div className="row justify-content-center align-items-center h-25">
+      <div className="time">
+        {prettyMs(number, {
+          colonNotation: true,
+          keepDecimalsOnWholeSeconds: true,
+        })}
+      </div>
+    </div>
   );
 }
 

@@ -64,7 +64,7 @@ function Table({ setRun, setNumber, number }) {
 
   return (
     <>
-      <div className="container">
+      <div className="row justify-content-center">
         {solved && (
           <PopUp
             number={number}
