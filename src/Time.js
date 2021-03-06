@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import prettyMs from "pretty-ms";
 
 function Time({ run, number, setNumber }) {
