@@ -1,3 +1,7 @@
+It is a skill-based single player game, in Hungarian called "Tili-toli". You have to solve the puzzle as fast as you can.
+You can play the game here: https://aniko-s.github.io/Tilitoli/
+I will add select options in the game (such as size, picture, etc.).
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
